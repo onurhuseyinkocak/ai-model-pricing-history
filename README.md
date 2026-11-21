@@ -1,6 +1,6 @@
 # AI model pricing history
 
-Daily snapshots of first-party LLM API prices (OpenAI, Anthropic, Google Gemini, xAI, DeepSeek, Mistral, Cohere, Moonshot, Qwen, Z.ai, Perplexity, Groq): input/output/cache prices per 1M tokens, context limits, long-context tiers, batch/flex/priority prices, deprecation dates, a change log, and computed costs for typical tasks.
+Daily snapshots of LLM API prices from the model makers' own APIs (OpenAI, Anthropic, Google Gemini, xAI, DeepSeek, Mistral, Cohere, Moonshot, Qwen, Z.ai) plus two hosts, Perplexity and Groq (which also serve other companies' models): input/output/cache prices per 1M tokens, context limits, long-context tiers, batch/flex/priority prices, deprecation dates, a change log, and computed costs for typical tasks.
 
 Snapshots started on **2026-11-21**, so the history is short and grows by one snapshot a day.
 
@@ -25,11 +25,11 @@ git log --follow -p -- data/latest.csv
 
 Prices are USD per 1M tokens (`*_per_mtok`); an empty value means the source does not list it (unknown, not free).
 
-- `model_id`: `provider/model` as listed by the provider's own API (cloud resellers such as Bedrock, Azure and Vertex are excluded).
+- `model_id`: `provider/model`, where `provider` is LiteLLM's provider key (`openai`, `anthropic`, `gemini`, `xai`, `deepseek`, `mistral`, `cohere` / `cohere_chat`, `moonshot`, `dashscope` = Alibaba Qwen, `zai`, `perplexity`, `groq`). Cloud platforms such as Bedrock, Azure and Vertex are excluded. Perplexity and Groq rows include models made by other companies (e.g. `perplexity/anthropic/...`, `groq/openai/gpt-oss-120b`).
 - `name`, `page`: set for the models that have a page on vibecodingturkey.com.
 - `max_input`, `max_output`: token limits. `tier_threshold` + `tier_*`: long-context price that applies when the prompt exceeds the threshold.
 - `batch_*`, `flex_*`, `priority_*`, `ultrafast_*`: alternative service tiers.
-- `supports_*`: 1/0 capability flags; `deprecation_date`, `successor_model`, `source_url` (provider pricing page).
+- `supports_*`: 1/0 capability flags; `deprecation_date`, `successor_model`, `source_url` (the provider documentation or pricing page LiteLLM cites, when listed; empty for some rows).
 
 Task costs (`task_costs_usd` / `task-costs.csv`):
 
@@ -54,4 +54,6 @@ A GitHub Action runs daily at 04:41 UTC, reads https://vibecodingturkey.com/mode
 ## Sources and licence
 
 - **Source data: LiteLLM `model_prices_and_context_window.json`** (https://github.com/BerriAI/litellm), MIT License, Copyright (c) 2023 Berri AI. The licence text is in [`LICENSE-LITELLM`](LICENSE-LITELLM). Fields are normalised (per-token prices converted to per-1M-token prices, first-party providers only).
+- The source fields inside `data/` (prices, limits, flags) remain under LiteLLM's MIT License.
 - **Our additions** (the daily snapshot history, the change log, the computed task costs, model names and page links) are licensed under [CC BY 4.0](LICENSE). Attribution: "AI model pricing history, vibecodingturkey.com".
+- The code in `scripts/` and `.github/` is MIT licensed.
