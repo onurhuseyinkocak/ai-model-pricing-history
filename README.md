@@ -53,7 +53,7 @@ A GitHub Action runs daily at 04:41 UTC, reads https://vibecodingturkey.com/mode
 
 ## Sources and licence
 
-- **Source data: LiteLLM `model_prices_and_context_window.json`** (https://github.com/BerriAI/litellm), MIT License, Copyright (c) 2023 Berri AI. The licence text is in [`LICENSE-LITELLM`](LICENSE-LITELLM). Fields are normalised (per-token prices converted to per-1M-token prices, first-party providers only).
+- **Source data: LiteLLM `model_prices_and_context_window.json`** (https://github.com/BerriAI/litellm), MIT License, Copyright (c) 2023 Berri AI. The licence text is in [`LICENSE-LITELLM`](LICENSE-LITELLM). Fields are normalised (per-token prices converted to per-1M-token prices, the model makers' own APIs plus Perplexity and Groq; cloud platforms excluded).
 - The source fields inside `data/` (prices, limits, flags) remain under LiteLLM's MIT License.
 - **Our additions** (the daily snapshot history, the change log, the computed task costs, model names and page links) are licensed under [CC BY 4.0](LICENSE). Attribution: "AI model pricing history, vibecodingturkey.com".
-- The code in `scripts/` and `.github/` is MIT licensed.
+- The code in `scripts/` and `.github/` is MIT licensed ([`LICENSE-CODE`](LICENSE-CODE)).
