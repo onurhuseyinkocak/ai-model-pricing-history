@@ -1,0 +1,9 @@
+{
+  "name": "ai-model-pricing-history",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test scripts/update.test.mjs",
+    "update": "node scripts/update.mjs"
+  }
+}
