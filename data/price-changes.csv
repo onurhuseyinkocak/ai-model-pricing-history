@@ -22,3 +22,12 @@ date,model_id,field,old,new
 2026-11-24,perplexity/perplexity/deepseek-v4-pro-0813,supports_function_calling,,1
 2026-11-24,perplexity/perplexity/nemotron-3.5-super-120b-a12b,supports_function_calling,,1
 2026-11-24,perplexity/xai/grok-4.7,supports_function_calling,,1
+2026-11-25,openai/chat-latest,max_input,400000,272000
+2026-11-25,openai/gpt-6-astra-healthcare,model,,added
+2026-11-25,openai/gpt-6.1-sol-healthcare,model,,added
+2026-11-25,openai/gpt-6.2-astra-healthcare,model,,added
+2026-11-25,openai/gpt-6.2-sol-healthcare,model,,added
+2026-11-25,xai/grok-4.6,batch_input_per_mtok,,1.6
+2026-11-25,xai/grok-4.6,batch_output_per_mtok,,4.8
+2026-11-25,xai/grok-4.6-latest,model,,added
+2026-11-25,xai/grok-4.7-latest,model,,added
