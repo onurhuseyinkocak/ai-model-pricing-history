@@ -31,3 +31,7 @@ date,model_id,field,old,new
 2026-11-25,xai/grok-4.6,batch_output_per_mtok,,4.8
 2026-11-25,xai/grok-4.6-latest,model,,added
 2026-11-25,xai/grok-4.7-latest,model,,added
+2026-11-28,xai/grok-code-fast,deprecation_date,,2026-05-15
+2026-11-28,xai/grok-code-fast,successor_model,,xai/grok-build-0.1
+2026-11-28,xai/grok-code-fast-1-0825,deprecation_date,,2026-05-15
+2026-11-28,xai/grok-code-fast-1-0825,successor_model,,xai/grok-build-0.1
